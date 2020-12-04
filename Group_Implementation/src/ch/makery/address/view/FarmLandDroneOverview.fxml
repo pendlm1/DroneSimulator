@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.3151183970856102" prefHeight="650.0" prefWidth="1100.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="648.0" prefWidth="583.0">
+               <children>
+                  <Label layoutX="10.0" layoutY="449.0" prefHeight="16.0" prefWidth="110.0" text="Name:">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="484.0" prefHeight="16.0" prefWidth="110.0" text="Position(X,Y):">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="519.0" prefHeight="16.0" prefWidth="110.0" text="Size (L, W, H):">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="555.0" prefHeight="16.0" prefWidth="110.0" text="Price:">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="name" layoutX="148.0" layoutY="444.0" prefHeight="25.0" prefWidth="175.0" promptText="Item Name" />
+                  <TextField fx:id="Xpos" layoutX="147.0" layoutY="479.0" prefHeight="27.0" prefWidth="85.0" promptText="Xpos" text="0" />
+                  <TextField fx:id="Ypos" layoutX="244.0" layoutY="479.0" prefHeight="25.0" prefWidth="80.0" promptText="Ypos" text="0" />
+                  <Label layoutX="5.0" layoutY="4.0" prefHeight="20.0" prefWidth="110.0" text="Farm Items">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="length" layoutX="145.0" layoutY="516.0" prefHeight="25.0" prefWidth="55.0" promptText="Len" text="0" />
+                  <TextField fx:id="width" layoutX="208.0" layoutY="516.0" prefHeight="25.0" prefWidth="55.0" promptText="Wid" text="0" />
+                  <TextField fx:id="height" layoutX="270.0" layoutY="516.0" prefHeight="25.0" prefWidth="55.0" promptText="Ht" text="0" />
+                  <TextField fx:id="price" layoutX="146.0" layoutY="551.0" prefHeight="27.0" prefWidth="182.0" promptText="Price" text="0.00" />
+                  <TextField fx:id="marketPrice" layoutX="142.0" layoutY="589.0" prefHeight="27.0" prefWidth="182.0" promptText="Market Price" text="0.00" />
+                  <ColorPicker fx:id="color" layoutX="139.0" layoutY="621.0" />
+                  <Accordion layoutX="6.0" layoutY="31.0" prefHeight="395.0" prefWidth="150.0">
+                    <panes>
+                        <TitledPane fx:id="myBackgrounds" animated="false" onMouseClicked="#showCheckBox" text="Background Containers">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <GridPane fx:id="containers1" layoutX="-26.0" layoutY="151.0" prefHeight="340.0" prefWidth="148.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <ImageView fx:id="field" fitHeight="57.0" fitWidth="45.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/field.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="road" fitHeight="62.0" fitWidth="44.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1">
+                                             <image>
+                                                <Image url="@../util/Images/Other/road.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="golfCourse" fitHeight="55.0" fitWidth="43.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="1">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/golf%20course.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="sea" fitHeight="58.0" fitWidth="46.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2">
+                                             <image>
+                                                <Image url="@../util/Images/Other/water.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="court" fitHeight="50.0" fitWidth="43.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/Court.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="desert" fitHeight="54.0" fitWidth="43.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/desert.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="field2" fitHeight="59.0" fitWidth="47.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/field2.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="island" fitHeight="57.0" fitWidth="44.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="2">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/island.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="mountain" fitHeight="61.0" fitWidth="42.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/mountains.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="roadfork" fitHeight="59.0" fitWidth="41.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/roadfork.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="volcano" fitHeight="57.0" fitWidth="43.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="3">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/Volcano.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="USA" fitHeight="54.0" fitWidth="42.0" onMouseClicked="#enlargeImage">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/USA.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                      <TitledPane fx:id="myContainers" animated="false" onMouseClicked="#showCheckBox" text="Containers">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <GridPane fx:id="containers" layoutX="-26.0" layoutY="151.0" prefHeight="340.0" prefWidth="148.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="139.00000762939453" minHeight="10.0" prefHeight="96.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="160.0" minHeight="10.0" prefHeight="104.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="92.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <ImageView fx:id="barnHouse" fitHeight="80.0" fitWidth="45.0" onMouseClicked="#enlargeImage">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/barn.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="silo" fitHeight="72.0" fitWidth="45.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/Farm%20Container.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="building" fitHeight="67.0" fitWidth="45.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/building.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="barnHouse2" fitHeight="80.0" fitWidth="45.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="1">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/barn2.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="house1" fitHeight="80.0" fitWidth="45.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/house2.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="house2" fitHeight="80.0" fitWidth="45.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/house.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="storage" fitHeight="80.0" fitWidth="45.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/storage.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="windmillHouse" fitHeight="69.0" fitWidth="45.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="2">
+                                             <image>
+                                                <Image url="@../util/Images/Containers/windmill%20barn.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </TitledPane>
+                      <TitledPane fx:id="myItems" animated="false" onMouseClicked="#hideCheckBox" prefHeight="0.0" prefWidth="181.0" text="Items ">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Accordion prefHeight="340.0" prefWidth="148.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <panes>
+                                        <TitledPane animated="false" text="Animals">
+                                             <content>
+                                                <GridPane prefHeight="340.0" prefWidth="148.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <ImageView fx:id="bear" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/bear.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="bull" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/bull.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="camel" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/camel.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="cat" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="3">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/cat.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="chick" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="1">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/chick.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="hen" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/chicken.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="rooster" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/rooster.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="cow" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/cow.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="deer" fitHeight="24.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="2">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/deer.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="dog" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/dog.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="duck" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/duck.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="fish" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/fish.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="fox" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="3">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/fox.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="giraffe" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/giraffe.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="goat" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/goat.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="horse" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/horse.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="kangaroo" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="4">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/kangroo.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="mouse" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/mouse.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="owl" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/owl.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="peacock" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/peacock.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="pig" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="5">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/pig.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="rabbit" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/rabbit.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="sheep" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/sheep.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="snake" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/snake.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="swan" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="6">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/swan.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="turkey" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/turkey.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="wolf" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/wolf.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="zebra" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Animals/zebra.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </children>
+                                                </GridPane>
+                                             </content>
+                                          </TitledPane>
+                                        <TitledPane animated="false" text="Crops">
+                                             <content>
+                                                <GridPane>
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <ImageView fx:id="apple" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/apple.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="banana" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/bananna.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="blueberry" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/blue%20berry.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="cherries" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="3">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/cherries.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="coffeeBeans" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="1">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/coffee%20beans.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="corn" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/corn.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="eggplant" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/egg%20plant.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="grapes" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/grapes.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="leaf" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="2">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/leaf.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="lemon" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/lemons.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="acorn" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/nut.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="orange" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/orange.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="peach" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="3">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/peach.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="pepper" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/pepper.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="pineapple" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/pine%20apple.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="pumpkin" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/pumpkin.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="seeds" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="4">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/seeds.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="strawberry" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/strawberry.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="tree1" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/tree.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="tree2" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/tree2.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="vegetables" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="5">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/vegetables.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="watermellon" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/watermellon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="wheat" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Crops/wheat.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </children>
+                                                </GridPane>
+                                             </content>
+                                          </TitledPane>
+                                          <TitledPane animated="false" layoutX="10.0" layoutY="37.0" text="Equipment">
+                                             <content>
+                                                <GridPane>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <ImageView fx:id="waterPot" fitHeight="55.0" fitWidth="35.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="1">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Tools/water%20pot.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="screwDriver" fitHeight="55.0" fitWidth="35.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Tools/screw%20driver.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="airplane" fitHeight="55.0" fitWidth="35.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Vehicles/airplane.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="tools" fitHeight="55.0" fitWidth="35.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Tools/tools.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="hammer" fitHeight="55.0" fitWidth="35.0" onMouseClicked="#enlargeImage">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Tools/hammer.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="boat" fitHeight="55.0" fitWidth="35.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Vehicles/boat.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="car" fitHeight="55.0" fitWidth="35.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="2">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Vehicles/car.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="tractor" fitHeight="55.0" fitWidth="35.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Vehicles/farm%20truck.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="loaderTractor" fitHeight="55.0" fitWidth="35.0" onMouseClicked="#enlargeImage" GridPane.rowIndex="3">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Vehicles/loader.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fx:id="truck" fitHeight="55.0" fitWidth="35.0" onMouseClicked="#enlargeImage" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                         <image>
+                                                            <Image url="@../util/Images/Leaf/Vehicles/truck.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </children>
+                                                </GridPane>
+                                             </content>
+                                          </TitledPane>
+                                      </panes>
+                                    </Accordion>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </TitledPane>
+                    </panes>
+                  </Accordion>
+                  <ImageView fx:id="drone" disable="true" fitHeight="72.0" fitWidth="77.0" layoutX="204.0" layoutY="34.0" onMouseClicked="#addDrone">
+                     <image>
+                        <Image url="@../util/Images/Leaf/Vehicles/drone2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="windowView" fitHeight="141.0" fitWidth="110.0" layoutX="188.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="submitComp" layoutX="192.0" layoutY="324.0" mnemonicParsing="false" onMouseClicked="#submitItem" prefHeight="39.0" prefWidth="85.0" text="Submit" />
+                  <CheckBox fx:id="isContainer" layoutX="185.0" layoutY="386.0" mnemonicParsing="false" onMouseClicked="#hideMarketPrice" text="Container" />
+                  <Button fx:id="addToContainer" layoutX="277.0" layoutY="383.0" mnemonicParsing="false" text="Add" visible="false" />
+                  <Label layoutX="10.0" layoutY="595.0" prefHeight="16.0" prefWidth="110.0" text="Market Price:">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="800.0">
+               <children>
+                  <SplitPane dividerPositions="0.10681114551083591" orientation="VERTICAL" prefHeight="648.0" prefWidth="799.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="40.0" prefWidth="797.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="9.0" prefHeight="23.0" prefWidth="126.0" text="Drone Controls">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="flyto" layoutX="191.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#droneGoTo" prefHeight="25.0" prefWidth="150.0" text="Visit" />
+                              <Button fx:id="scan" layoutX="385.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#droneGoToAll" prefHeight="25.0" prefWidth="150.0" text="Scan" />
+                              <Button fx:id="deleteComp" layoutX="588.0" layoutY="8.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Delete" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="14.0" layoutY="44.0" text="Description:">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="itemInfo" layoutX="94.0" layoutY="45.0" />
+                           </children></AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="800.0">
+                           <children>
+                              <Pane fx:id="root" prefHeight="600.0" prefWidth="800.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </Pane>
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
